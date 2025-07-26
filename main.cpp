@@ -76,47 +76,47 @@ int main()
     glewInit();
 
     float positions[] = {
-        -0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f,  0.5f, -0.5f,
-        0.5f,  0.5f, -0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,   1.0f, 0.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,   1.0f, 0.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,   1.0f, 0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
 
-        -0.5f, -0.5f,  0.5f, 
-        0.5f, -0.5f,  0.5f, 
-        0.5f,  0.5f,  0.5f, 
-        0.5f,  0.5f,  0.5f, 
-        -0.5f,  0.5f,  0.5f, 
-        -0.5f, -0.5f,  0.5f, 
+        -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,   0.0f, 1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,   0.0f, 1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,   0.0f, 1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
 
-        -0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
 
-        0.5f,  0.5f,  0.5f,
-        0.5f,  0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f,  0.5f,
-        0.5f,  0.5f,  0.5f,
+        0.5f,  0.5f,  0.5f,  0.29f, 0.6f, 0.57f,
+        0.5f,  0.5f, -0.5f,  0.29f, 0.6f, 0.57f,
+        0.5f, -0.5f, -0.5f,  0.29f, 0.6f, 0.57f,
+        0.5f, -0.5f, -0.5f,  0.29f, 0.6f, 0.57f,
+        0.5f, -0.5f,  0.5f,  0.29f, 0.6f, 0.57f,
+        0.5f,  0.5f,  0.5f,  0.29f, 0.6f, 0.57f,
 
-        -0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f,  0.5f,
-        0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f, -0.5f,
+        -0.5f, -0.5f, -0.5f, 1.0f, 0.6f, 0.12f, 
+        0.5f, -0.5f, -0.5f,  1.0f, 0.6f, 0.12f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.6f, 0.12f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.6f, 0.12f,
+        -0.5f, -0.5f,  0.5f, 1.0f, 0.6f, 0.12f,
+        -0.5f, -0.5f, -0.5f, 1.0f, 0.6f, 0.12f,
 
-        -0.5f,  0.5f, -0.5f,  
-        0.5f,  0.5f, -0.5f,  
-        0.5f,  0.5f,  0.5f,  
-        0.5f,  0.5f,  0.5f,  
-        -0.5f,  0.5f,  0.5f,  
-        -0.5f,  0.5f, -0.5f
+        -0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f, 1.0f, 0.0f, 1.0f, 
+        -0.5f,  0.5f, -0.5f, 1.0f, 0.0f, 1.0f
     };
 
     
@@ -130,8 +130,10 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, buf);
     glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, 0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 6, 0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 6, (void*)(sizeof(float) * 3));
     glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
 
     unsigned int ibo;
     glGenBuffers(1, &ibo);
@@ -158,13 +160,11 @@ int main()
     int viewPos = glGetUniformLocation(program, "view");
     int projPos = glGetUniformLocation(program, "proj");
 
-    glUniformMatrix4fv(modelPos, 1, GL_FALSE, glm::value_ptr(model));
-    glUniformMatrix4fv(viewPos, 1, GL_FALSE, glm::value_ptr(view));
-    glUniformMatrix4fv(projPos, 1, GL_FALSE, glm::value_ptr(proj));
-
     float currTime = glfwGetTime();
     float lastTime = currTime;
     float deltaTime;
+
+    glEnable(GL_DEPTH_TEST);
 
     while(!glfwWindowShouldClose(window))
     {
@@ -173,7 +173,13 @@ int main()
         deltaTime = currTime - lastTime;
         lastTime = currTime;
 
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+        model = glm::rotate(model, glm::radians(50.0f) * deltaTime, glm::vec3(0.5f, 1.0f, 0.0f));
+
+        glUniformMatrix4fv(modelPos, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(viewPos, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(projPos, 1, GL_FALSE, glm::value_ptr(proj));
 
         glDrawArrays(GL_TRIANGLES, 0, 36);
 

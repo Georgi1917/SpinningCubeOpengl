@@ -78,9 +78,15 @@ int main()
     float positions[] = {
         -0.5f, -0.5f,
         0.5f, -0.5f,
-        0.0f, 0.5f
+        0.5f,  0.5f,
+        -0.5f, 0.5f
     };
 
+    
+    unsigned int indeces[] = {
+        0, 1, 2,
+        2, 3, 0
+    };
 
     unsigned int buf;
     glGenBuffers(1, &buf);
@@ -89,6 +95,11 @@ int main()
 
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
     glEnableVertexAttribArray(0);
+
+    unsigned int ibo;
+    glGenBuffers(1, &ibo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indeces), indeces, GL_STATIC_DRAW);
 
     std::string vsFile = "shaders/vertex.shader";
     std::string fsFile = "shaders/fragment.shader";
@@ -99,7 +110,20 @@ int main()
     unsigned int program = CreateShaders(vs, fs);
     glUseProgram(program);
 
-    glm::mat4 trans = glm::mat4(1.0f);
+    glm::mat4 model = glm::mat4(1.0f);
+    glm::mat4 view = glm::mat4(1.0f);
+    glm::mat4 proj;
+    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+    proj = glm::perspective(glm::radians(45.0f), 1280.0f / 720.0f, 0.1f, 100.0f);
+
+    int modelPos = glGetUniformLocation(program, "model");
+    int viewPos = glGetUniformLocation(program, "view");
+    int projPos = glGetUniformLocation(program, "proj");
+
+    glUniformMatrix4fv(modelPos, 1, GL_FALSE, glm::value_ptr(model));
+    glUniformMatrix4fv(viewPos, 1, GL_FALSE, glm::value_ptr(view));
+    glUniformMatrix4fv(projPos, 1, GL_FALSE, glm::value_ptr(proj));
 
     float currTime = glfwGetTime();
     float lastTime = currTime;
@@ -114,12 +138,7 @@ int main()
 
         glClear(GL_COLOR_BUFFER_BIT);
 
-        trans = glm::rotate(trans, deltaTime, glm::vec3(0.0f, 0.0f, 1.0f));
-
-        unsigned int id = glGetUniformLocation(program, "u_Trans");
-        glUniformMatrix4fv(id, 1, GL_FALSE, glm::value_ptr(trans));
-
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(window);
 
